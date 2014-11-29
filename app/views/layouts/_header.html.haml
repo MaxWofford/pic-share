@@ -1,0 +1,4 @@
+= link_to 'home', home_path
+- if !current_user
+  = link_to 'login', new_user_session_path
+  = link_to 'sign up', new_user_registration_path
