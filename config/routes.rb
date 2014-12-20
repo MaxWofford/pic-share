@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'events#index', as: :root
+
+  # Static about and home pages
+  get 'home' => 'static_pages#home', as: :home
+
+  # Routes to events
+  get 'events/show/:name' => 'events#show'
+  resources :events, only: [:show, :new, :create, :index]
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

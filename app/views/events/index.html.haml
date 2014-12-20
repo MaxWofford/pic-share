@@ -1,0 +1,7 @@
+%h1 Events Index page
+- if @events.length == 0
+  = link_to new_event_path do
+    %p No events yet? Make a new event!
+- @events.each do |event|
+  = link_to event.name, event
+  / "/events/show/#{event.id}"
