@@ -17,10 +17,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+# Devise for user model
+gem 'devise'
+# Paperclip image upload
+gem 'paperclip', '~> 4.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', '~> 0.4.0'
+group :production do
+  # STDOUT logging for Heroku
+  gem 'rails_12factor'
+  # Heroku's database of choice
+  gem 'pg'
 end
 
 group :development do
@@ -30,6 +36,8 @@ group :development do
   gem 'sqlite3'
   # Use Pry for debugging
   gem 'pry'
+  # For local email configuration
+  gem 'foreman'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
