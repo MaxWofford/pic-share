@@ -12,11 +12,11 @@ class EventsController < ApplicationController
   # Takes post request data and creates a new event
   def create
     @event = Event.new event_params
-    binding.pry
+    @event.user_id = current_user.id
     if @event.save
       redirect_to @event
     else
-
+      # TODO: Error handling
     end
   end
   # Renders the events form
