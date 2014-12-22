@@ -1,6 +1,2 @@
 %h1 New Event page
-= form_for(@event) do |f|
-  = f.label :name
-  = f.text_field :name
-  %br
-  = f.submit
+= render 'form'
